@@ -1,0 +1,19 @@
+%------------usepackage-----------%
+\usepackage{amssymb}
+\usepackage{chngcntr}
+\usepackage{pgffor}
+%\usepackage{python} 
+%----------macros----%
+
+\newcommand\MAX{10}
+\newcommand\Que[1]{%
+	\leavevmode\par
+	\stepcounter{question}
+	\noindent
+	Q - \thequestion.  #1\par}
+
+\newcommand\Ans[2][]{%
+	\leavevmode\par
+	\stepcounter{answer}
+	\noindent
+	A - \theanswer. {#1}#2\par}

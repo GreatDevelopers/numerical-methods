@@ -1,0 +1,29 @@
+%selecting class of document%
+\documentclass{article}
+\newcounter{question}
+\newcounter{answer}
+\setcounter{question}{0}
+\setcounter{answer}{0}
+%Inputing needed package file%
+\input{usepackage.tex}
+
+\begin{document}
+	
+	%inputing title file%
+	\input{title.tex}
+	
+	%inputing loop %
+	
+	\foreach \i in {1,...,\MAX} {%
+		\edef\File{ques\i}%     The % here are necessary to eliminate any
+		\edef\FileName{ans\i}%     The % here are necessary to eliminate any
+		\IfFileExists{\FileName}{%  spurious spaces that may get inserted
+			\input{\File}%       at these points
+			\input{\FileName}%       at these points
+		}
+	}
+    
+\end{document}
+
+
+
